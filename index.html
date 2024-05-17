@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de deportes</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <style>
+    #resultado {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body class="d-flex justify-content-center align-items-center">
+  <div class="container">
+    <h1 class="text-center mb-4 mt-5">Registro de deportes</h1>
+
+    <!--formulario principal-->
+    <form id="formulario" class="mb-4" action="/editar" method="post">
+      <div class="form-group">
+        <label for="nombre">Ingresa el nombre del deporte:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="precio">Ingresa el precio:</label>
+        <input type="number" id="precio" name="precio" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-success">Agregar deporte / Editar precio</button>
+    </form>
+    <!--formulario para eliminar-->
+    <form id="formularioEliminar" action="/eliminar" method="post">
+      <div class="form-group">
+        <label for="nombreEliminar">Ingresa el deporte a eliminar:</label>
+        <input type="text" id="nombreEliminar" name="nombre" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-danger">Eliminar deporte</button>
+    </form>
+
+    <div class="form-group">
+      <div id="resultado"></div>
+      <button id="cargarJson" class="btn btn-primary">Ver deportes actualizados</button>
+    </div>
+  </div>
+
+
+  <script>
+    document.getElementById('cargarJson').addEventListener('click', function () {
+      const url = 'http://localhost:3000/deportes_consulta.json';
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('resultado').innerText = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Error al cargar el archivo JSON:', error));
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+{
+  "deportes": [
+    {
+      "nombre": "ballet"
+    },
+    {
+      "nombre": "pingpong"
+    },
+    {
+      "nombre": "badminton"
+    },
+    {
+      "nombre": "aerobox"
+    },
+    {
+      "nombre": "futbolito"
+    },
+    {
+      "nombre": "danza"
+    }
+  ]
+}

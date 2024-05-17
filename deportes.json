@@ -1,0 +1,28 @@
+{
+  "deportes": [
+    {
+      "nombre": "ballet",
+      "precio": "60000"
+    },
+    {
+      "nombre": "pingpong",
+      "precio": "90000"
+    },
+    {
+      "nombre": "badminton",
+      "precio": "50000"
+    },
+    {
+      "nombre": "aerobox",
+      "precio": "90000"
+    },
+    {
+      "nombre": "futbolito",
+      "precio": "80000"
+    },
+    {
+      "nombre": "danza",
+      "precio": "70000"
+    }
+  ]
+}
